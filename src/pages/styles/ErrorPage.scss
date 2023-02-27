@@ -1,0 +1,36 @@
+.App-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.Error-message{
+    font-size: 5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.Error-span{
+    font-size: 1.5rem;
+    margin: 1rem auto;
+}
+
+.Error-image{
+    margin: 1rem auto;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.Error-btn{
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    color: white;
+    background-color: rgb(252, 70, 100);
+    border-radius: 6px;
+}

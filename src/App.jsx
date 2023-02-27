@@ -1,33 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from 'react';
+
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import ErrorPage from './pages/ErrorPage';
+import SearchResults from './pages/SearchResults';
+import Login from './pages/Login'
+
+import Header from './components/Header/Header';
+
+import { GifsContextProvider } from './context/GifsContext';
+import { UserContextProvider } from './context/UserContext'
+
+import { Route, Link, Switch } from "wouter";
+
+import './App.scss'
+import SignUp from './pages/SignUp';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <UserContextProvider>
+      <div className="App">
+        <Header/>
+          <section className="App-header">
+            <Link to='/'>
+              <div className='title-container'>
+                  <button data-text="Awesome" className="title-btn">
+                    <span className="actual-text">&nbsp;iFFy&nbsp;</span>
+                    <span className="hover-text" aria-hidden="true">&nbsp;iFFy&nbsp;</span>
+                  </button>
+            </div>
+            </Link>
+            <GifsContextProvider>
+              <Switch>
+                <Route path='/' component={Home} />
+                <Route path='/search/:keyword/:rating?' component={SearchResults} />
+                <Route path='/gif/:id' component={Detail} />
+                <Route path='/login' component={Login} />
+                <Route path='/signup' component={SignUp} />
+                <Route path='/:rest*' component={ErrorPage} />
+              </Switch>
+            </GifsContextProvider>
+          </section>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    </UserContextProvider>
   )
 }
 

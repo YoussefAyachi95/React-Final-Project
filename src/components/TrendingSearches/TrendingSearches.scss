@@ -1,0 +1,45 @@
+.Trending-container{
+    width: 100%;
+    margin: 0 auto;  
+    margin-bottom: 2rem; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr, 1fr)); 
+    gap: 4px;
+}
+
+#Trending-link{
+    width: 100%;
+    margin-right: 4px;
+    font-weight: 600;
+    box-shadow: 0 .5rem 1rem rgba(143, 142, 142, 0.15)!important;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    color: var(--theme-body-txt);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#Trending-link:hover{
+    font-size: 1.1rem;
+    color: black;
+}
+
+#Trending-link:nth-child(5n + 1) {
+    background-color: var(--brand-color_1);
+  }
+
+#Trending-link:nth-child(5n + 2) {
+    background-color: var(--brand-color_2);
+  }
+
+#Trending-link:nth-child(5n + 3) {
+    background-color: var(--brand-color_3);
+  }
+
+#Trending-link:nth-child(5n + 4)  {
+    background-color: var(--brand-color_4);
+  }
+  
+#Trending-link:nth-child(5n + 5)  {
+    background-color: var(--brand-color_5);
+  }

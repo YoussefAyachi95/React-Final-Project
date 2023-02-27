@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100;300&display=swap');
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  overflow-y: hidden;
+}
+
+.App{
+  
+  .App-logo {
+    margin: 10px auto;
+    padding: 20px 0;
+    width: 144px;
+  }
+  
+  .App-title {
+    font-size: 1.2rem;
+
+    color: var(--theme-body-txt);
+    margin-top: 1.5rem;
+  }
+  
+  .App-content {
+    background-color: var(--theme-body-bg);
+    color: var(--theme-body-txt);
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    min-height: 100vh;
+    padding: 16px;
+    text-align: left;
+  }
+}
+
+
+.title-container{
+  margin: 4rem auto;
+  position: relative;
+  left: 40%;
+
+    
+  .title-btn {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+
+  
+  .title-btn {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: rgb(252, 70, 100);
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  
+  .title-btn:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+}
+
+
+ 
