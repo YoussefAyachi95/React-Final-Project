@@ -5,6 +5,7 @@ import Detail from './pages/Detail';
 import ErrorPage from './pages/ErrorPage';
 import SearchResults from './pages/SearchResults';
 import Login from './pages/Login'
+import SignUp from './pages/SignUp';
 
 import Header from './components/Header/Header';
 
@@ -14,7 +15,6 @@ import { UserContextProvider } from './context/UserContext'
 import { Route, Link, Switch } from "wouter";
 
 import './App.scss'
-import SignUp from './pages/SignUp';
 
 function App() {
 
