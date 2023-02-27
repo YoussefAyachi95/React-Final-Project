@@ -5,7 +5,7 @@ export default function useTitle ({title}) {
 
     useEffect(() => {
         const firstTitle = prevTitle.current
-        document.title = `${title} | Iffy`;  
+        document.title = `${decodeURIComponent(title)} | Iffy`;  
 
         return () => document.title = firstTitle
     }, [title])
